@@ -1,3 +1,18 @@
+- {'error' => 'error', 'warning' => 'warning',
+   'notice' => 'success', 'message' => 'info'}.each do |header, classname|
+  %p{ :class => "alert alert-#{classname} x-flash-#{header} display-none" }
+    %span.text
+    %a.close( data-dismiss="alert" ) ×
+- if notice
+  %p#main_alert_notice.alert.alert-info
+    %a.close( data-dismiss="alert" ) ×
+    = raw notice
+- if alert
+  %p#main_alert_error.alert.alert-error
+    %a.close( data-dismiss="alert" ) ×
+    = raw alert
+   
+
 - flash.each do |name, msg|
   - if msg.is_a?(String)
     %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}

@@ -9,5 +9,4 @@
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    = render 'layouts/bootstrap_messages'
     = yield

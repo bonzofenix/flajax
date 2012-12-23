@@ -9,8 +9,7 @@ feature 'shows flash messages', js: true do
     within("#remote-form") do
       click_button 'show me the flash!'
     end
-    page.should have_css(".alert", count: 1) 
-    page.should have_content("Hey this really worked!", count: 1) 
+    page.should have_content("Hey this really worked!") 
   end
 
 end

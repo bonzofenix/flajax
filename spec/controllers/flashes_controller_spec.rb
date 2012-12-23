@@ -12,7 +12,7 @@ describe FlashesController do
   describe 'When post to create' do
     it 'renders nothing' do
       post :create, format: 'js'
-      response.body.should have_content('')
+      response.body.should be_blank
     end
 
     it 'flashs an alert' do
