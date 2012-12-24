@@ -1,0 +1,8 @@
+Description:
+    Explain the generator
+
+Example:
+    rails generate flajax_partial Thing
+
+    This will create:
+        what/will/it/create
