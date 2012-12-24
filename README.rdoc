@@ -6,13 +6,15 @@ Gem that provides ajax flash messages for you rails app.
 
 == Installation
 
-To get flajax working you should make sure to replace your message partial with the flash alerts with the flajax one. You can customize this view as much as you want and use it in any template you want just make sure to keep 4 dom elements with the following classes: x-flash-[error, warning, notice, message] and with span.text child.
+To get flajax working you should replace your messages partial with the one that flajax provides. You can customize this partial as much as you want and use it in any template you want just make sure to add x-flash-error, x-flash-warning, x-flash-notice and x-flash-mesagge to 4 different containers with a span.text inside so that flajax can find a place to insert the text.
 
-you can generate with this partial with the following command:
+you can generate the partial with the following command:
 
   $ rails g flajax_partial
 
-After you included this partial its time to require some javascript. In  app/assets/javascript/application.js add:
+Make sure to render this partial!
+
+Flajax also needs some js to work. In app/assets/javascript/application.js add:
 
   //= require flajax
 
