@@ -11,7 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require flajax
 //= require jquery_ujs
 //= require_tree .
-
