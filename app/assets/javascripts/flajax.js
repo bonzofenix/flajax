@@ -4,7 +4,13 @@ $(document).ready(function(event, request){
   $('.alert').hide();
 });
 
- $(document).ajaxComplete(function(event, request){
+$(document).ajaxComplete(function(event, request){
+  scrollTop = request.getResponseHeader('X-Scroll-Top');
+
+  if(scrollTop){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  }
+
   $(['Error','Warning','Notice','Message']).each(function(i, header){
      alertbox = $('.x-flash-' +header.toLowerCase())
      value = request.getResponseHeader('X-Flash-' + header);

@@ -23,8 +23,20 @@ describe FlashesController do
     end
 
     it 'flashs an alert' do
-      post :create, format: 'js'
-      flash[:notice].should have_content("Hey this really worked!") 
+      xhr :post, :create, format: 'js'
+      response.headers['X-Flash-Notice'].should  == "Hey this really worked!"
+    end
+
+    it 'flashs an alert with scroll top' do
+      xhr :post, :create, format: 'js'
+      controller.add_flajax
+      response.headers['X-Scroll-Top'].should be_true
+    end
+
+    it 'flashs an alert, no scroll top animation' do
+      xhr :post, :create_no_scroll_top, format: 'js'
+      controller.add_flajax
+      response.headers['X-Scroll-Top'].should be_false
     end
   end
 end

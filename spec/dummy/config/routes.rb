@@ -1,5 +1,10 @@
 Dummy::Application.routes.draw do
-  resources :flashes ,only: [ :index, :create ]
+  resources :flashes, only: [ :index, :create ] do
+    collection do
+      post :create_no_scroll_top
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

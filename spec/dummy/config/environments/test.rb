@@ -1,5 +1,6 @@
 require 'capybara-webkit'
 require 'haml'
+require 'debugger'
 
 Dummy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
