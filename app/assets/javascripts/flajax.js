@@ -1,5 +1,8 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+$(document).ready(function(event, request){
+  $('.alert').hide();
+});
 
  $(document).ajaxComplete(function(event, request){
   $(['Error','Warning','Notice','Message']).each(function(i, header){

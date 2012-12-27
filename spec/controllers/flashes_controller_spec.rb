@@ -2,10 +2,17 @@ require 'spec_helper'
 
 describe FlashesController do
   
+  render_views
+
   describe 'When get index' do
     it 'renders index' do
       get :index
       response.should be_success
+    end
+
+    it 'renders the message template' do
+      get :index
+      response.should render_template('_messages')
     end
   end
 
