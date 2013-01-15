@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe FlashesController do
-  
   render_views
 
   describe 'When get index' do
@@ -31,12 +30,6 @@ describe FlashesController do
       xhr :post, :create, format: 'js'
       controller.add_flajax
       response.headers['X-Scroll-Top'].should be_true
-    end
-
-    it 'flashs an alert, no scroll top animation' do
-      xhr :post, :create_no_scroll_top, format: 'js'
-      controller.add_flajax
-      response.headers['X-Scroll-Top'].should be_false
     end
   end
 end

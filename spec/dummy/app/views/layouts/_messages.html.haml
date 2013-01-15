@@ -1,11 +1,9 @@
 - {'error' => 'error', 'warning' => 'warning',
    'notice' => 'success', 'message' => 'info'}.each do |header, classname|
-  / Styling inline is bad but I dont want to addan step in the installation
-  / process to add some flajax styles just to hide an element.
-  %p{ class: "alert alert-#{classname} x-flash-#{header}"  }
+  %p{ :class => "alert alert-#{classname} x-flash-#{header} hide" }
     %span.text
     %a.close( data-dismiss="alert" ) ×
-     
+
 
 - flash.each do |name, msg|
   - if msg.is_a?(String)

@@ -5,7 +5,7 @@ feature 'shows flash messages', js: true do
     visit root_path
   end
   describe  'when posting a form with remote: true' do
-    before :each do
+   before :each do
       within("#remote-form") do
         click_button 'show me the flash!'
       end
@@ -19,11 +19,5 @@ feature 'shows flash messages', js: true do
       page.should have_css('.alert', visible: true, count: 1)
     end
   end
-
-  scenario 'when posting a form with remote: true' do
-    find('.alert').should_not be_visible
-  end
-
-
 end
 
