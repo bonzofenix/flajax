@@ -10,7 +10,10 @@ gem "jquery-rails"
 
 group :assets do
   gem 'sass-rails'
+  gem 'therubyracer' 
   gem 'coffee-rails'
+
+gem "less"
 end
 
 group :development, :test do
@@ -21,7 +24,6 @@ end
 
 gem "twitter-bootstrap-rails"
 gem "haml"
-gem "less"
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
