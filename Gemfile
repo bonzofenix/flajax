@@ -19,6 +19,7 @@ end
 group :development, :test do
  gem "rspec-rails"
  gem "lunchy"
+ gem 'debugger'
  gem "capybara"
 end
 
@@ -30,4 +31,3 @@ gem "haml"
 # your gem to rubygems.org.
 
 # To use debugger
-gem 'debugger'
